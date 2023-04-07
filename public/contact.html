@@ -25,10 +25,10 @@
         </section>
         <section class="contactDetails">
             <h1>For any enquiries or feedback, please fill out this form:</h1>
-            <form action="insert.php" class="contactForm">
-                <input type="text" name="personName" id="personName" placeholder="Enter Your Name">
-                <input type="email" name="personEmail" id="personEmail" placeholder="Enter Valid Email">
-                <textarea name="personMessage" id="personMessage" cols="30" rows="3"
+            <form class="contactForm" id="input" name="formContact" method="post" action="formpage.php">
+                <input type="text" name="name" id="personName" placeholder="Enter Your Name">
+                <input type="email" name="email" id="personEmail" placeholder="Enter Valid Email">
+                <textarea name="additionalinformation" id="personMessage" cols="30" rows="3"
                     placeholder="Enter Your Message"></textarea>
                 <button type="submit">Send</button>
             </form>
@@ -37,6 +37,55 @@
 
         <section id="footer"></section>
     </main>
+        <!--JQuery plugins-->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
+        <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js" type="text/javascript"></script>
+    
+        <script type="text/javascript">
+            function setupFormValidation() {
+                
+                       $("#input").validate({
+                        rules: {
+                                name: {
+                                    required: true},
+                                email: {
+                                    required: true,
+                                    email: true
+                                },                          
+                            },
+                            messages: {
+                                name: "Please enter your name",
+                                email: {
+                                    required: "Please enter your email address",
+                                
+                                },
+                            },    
+                        });
+            
+                        $( "#input" ).submit(function( event ) {
+            
+                            if ( $( "input" ).name().val() === "" ) {
+                $( "span" ).text( "" ).show();
+                return;
+              }
+              document.getElementById("explanation").style.visibility = "visible";
+              document.getElementById("explanation").innerHTML =  "Thank you for your enquiry, you will be contacted within three working days.";
+              document.getElementById("explanation").style.color = "green";
+              
+              alert( "Thankyou!." );
+              event.preventDefault();
+            });
+            
+             }
+             //execute when the page is ready
+            $(document).ready(function($) {
+                     setupFormValidation();
+                     
+                });
+                
+               
+            
+            </script>
 
     <script>
         document.getElementById("footer").innerHTML = ` &copy; ${new Date().getFullYear()} Costly`;
