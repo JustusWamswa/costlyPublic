@@ -1,0 +1,464 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    font-family: 'Poppins', serif;
+}
+
+body {
+    background-color: #F0ECF2;
+}
+
+.navbar {
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 10vh;
+    background-color: #2A2540;
+    color: #E9E6F0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem 7rem;
+}
+.barIcon {
+    display: none;
+}
+.companyName {
+    font-size: 3rem;
+    font-weight: 300;
+}
+
+.companyName a {
+    text-decoration: none;
+    color: #E9E6F0;
+}
+
+.purpleText {
+    color: #8905F1;
+}
+
+.navbarItems {
+    width: 25%;
+    font-size: 1.2rem;
+    font-weight: 200;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbarItems a {
+    text-decoration: none;
+    color: #E9E6F0;
+}
+
+.navbarItems a:hover {
+    text-decoration: none;
+    color: #8905F1;
+}
+
+.clippyPath {
+    clip-path: polygon(0% 0%, 0% 65%, 22% 99.3%, 22.3% 99.5%, 22.6% 99.7%, 22.9% 99.9%, 23.2% 100%, 23.5% 100%, 23.8% 100%, 26% 99.3%, 100% 65%, 100% 0%);
+    background-color: #2A2540;
+    width: 100%;
+    height: 90vh;
+    position: relative;
+    display: flex;
+}
+
+.clippyPath::before {
+    content: "";
+    background-image: url(../images/equalizer-g701f38ca8_1280-removebg-preview.png);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    opacity: 0.1;
+}
+
+.intro {
+    position: relative;
+    top: 7vh;
+    left: 7%;
+    color: #E9E6F0;
+    width: 50%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro h1 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    padding: 2rem;
+    width: 60%;
+}
+
+.intro p {
+    font-size: 1rem;
+    font-weight: 400;
+    padding-bottom: 3rem;
+    width: 70%;
+}
+
+.entries {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    padding-bottom: 1rem;
+    align-items: center;
+    position: relative;
+}
+
+.entries input[type="text"] {
+    text-align: center;
+    border-radius: 1rem;
+    border: 1px solid #E9E6F0;
+    background-color: rgba(0, 0, 0, 0);
+    color: #E9E6F0;
+    font-size: 1rem;
+    padding: 0.5rem;
+}
+
+.intro button {
+    background-color: #8905F1;
+    border: 0px;
+    border-radius: 2rem;
+    padding: 0.5rem 2rem;
+    color: #E9E6F0;
+    font-size: 1rem;
+}
+
+.intro button:hover {
+    box-shadow: 1px 1px 0px #d5aef2;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.hero {
+    background-image: url(../images/abstract-shape.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 50%;
+    height: 80vh;
+    position: absolute;
+    top: 18vh;
+    right: 0;
+    z-index: 1;
+}
+
+#footer {
+    width: 100%;
+    height: 3rem;
+    background-color: #2A2540;
+    color: #E9E6F0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7rem;
+    position: absolute;
+    bottom: 0;
+}
+
+.contents {
+    width: 100%;
+    background-color: #2A2540;
+    position: relative;
+
+}
+
+.contents::before {
+    position: absolute;
+    content: "";
+    background-image: url(../images/moon.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.1;
+}
+
+.aboutContent {
+    position: relative;
+    color: #E9E6F0;
+    top: 15vh;
+}
+
+hr {
+    width: 15%;
+    height: 0.5rem;
+    background-color: #E9E6F0;
+    border: 1px solid #E9E6F0;
+    margin: 0;
+}
+
+.aboutContentHeading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.descriptionGrid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 7rem;
+    color: #E9E6F0;
+    position: relative;
+    top: 10vh;
+}
+
+.gridCol2 {
+    grid-column: span 2;
+}
+
+.description {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.5);
+    padding: 3rem;
+}
+
+.description h2 {
+    font-weight: 200;
+    padding: 1.5rem 0rem;
+    font-size: 1.2rem;
+}
+
+.articleIcon {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 2rem;
+    height: 2rem;
+}
+
+.icon1 {
+    background-image: url(../images/group.png);
+}
+
+.icon2 {
+    background-image: url(../images/teamwork.png);
+}
+
+.icon3 {
+    background-image: url(../images/teamwork.png);
+}
+
+.icon4 {
+    background-image: url(../images/teamwork.png);
+}
+
+.aboutMe {
+    color: #E9E6F0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutMe h2 {
+    font-weight: 200;
+    font-size: 1.5rem;
+    padding: 4rem 0rem 0rem 0rem;
+}
+
+.picAndDesc {
+    display: flex;
+    justify-content: center;
+}
+
+.myPic {
+    background-image: url(../images/clippingMask2.png);
+    width: 30%;
+    height: 65vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.picAndDesc p {
+    width: 50%;
+    padding: 3rem;
+}
+
+.picAndDesc p a {
+    color: #8905F1;
+    text-decoration: none;
+}
+
+.subtleBackground {
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+.subtleBackground::before {
+    background-image: url(../images/Untitled\ design.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.1;
+}
+
+.contactDetails {
+    position: relative;
+    top: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contactDetails h1 {
+    color: #1E1D21;
+    padding: 2rem 0rem;
+    font-weight: 600;
+}
+
+.contactForm {
+    width: 70%;
+    background-color: #2A2540;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+    gap: 2rem;
+}
+
+.contactForm input,
+textarea {
+    text-align: left;
+    border-bottom: 1px solid #E9E6F0;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    background-color: rgba(0, 0, 0, 0);
+    color: #E9E6F0;
+    font-size: 1rem;
+    padding: 0.5rem;
+    width: 40%;
+}
+
+.results {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 4rem 5rem 5rem 2rem;
+    position: relative;
+}
+
+#flagOfCountry_city1 {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 50%;
+    height: 10rem;
+}
+
+#flagOfCountry_city2 {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 50%;
+    height: 10rem;
+}
+
+.nameOfCountry {
+    color: #1E1D21;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+.content {
+    padding-left: 3.5rem;
+}
+
+.content h2 {
+    font-size: 0.8rem;
+    font-style: italic;
+
+    color: #5D5C60;
+}
+
+.content span {
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1rem;
+    color: #1E1D21;
+}
+
+ul {
+    list-style: none;
+    color: #1E1D21;
+}
+
+.list {
+    width: 100%;
+    background-color: #E9E6F0;
+    max-height: 7rem;
+    overflow-y: auto;
+    position: absolute;
+    top: 4.5rem;
+    z-index: 1;
+}
+
+.listElements {
+    padding: 1rem 0.5rem;
+}
+
+.listElements:hover {
+    background-color: #dad9df;
+}
+
+.map{
+    width: 40vw;
+    height: 40vh;
+    margin: 3rem;
+    background-color: #e3dce8;
+}
+
+#chart{
+    background-color: #fff;
+}
+
+table, td{
+    text-align: center;
+    border: 1px solid;
+}
+
+table{
+    width: 80%;
+}
+.canvas2 {
+    max-width: 50%;
+    max-height: 100%;
+}

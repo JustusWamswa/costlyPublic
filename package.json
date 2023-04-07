@@ -1,0 +1,26 @@
+{
+  "name": "costly",
+  "version": "1.0.0",
+  "description": "This is a site that is used to compare cost of living between two capital cities.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JustusWamswa/costly.git"
+  },
+  "author": "Justus Wamswa Chemirmir",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JustusWamswa/costly/issues"
+  },
+  "homepage": "https://github.com/JustusWamswa/costly#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "node-fetch": "^2.6.9",
+    "nodemon": "^2.0.22"
+  }
+}
