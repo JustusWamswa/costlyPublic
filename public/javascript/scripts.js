@@ -254,7 +254,7 @@ compareBtn.addEventListener('click', () => {
     dataLoad2();
 
     //================================== display results =====================================
-    //document.querySelector(".results").style.display = "grid";
+    document.querySelector(".results").style.display = "grid";
 
     //================================== display results =====================================
     document.querySelector('main').style.position = 'relative';
