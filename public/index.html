@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Costly - Home</title>
+    <link
+      rel="stylesheet"
+      media="screen and (min-width: 1281px)"
+      href="./css/styleSheetHighRes.css"
+    />
+    <link
+      rel="stylesheet"
+      media="screen and (max-width: 1280px)"
+      href="./css/styleSheetDesktop.css"
+    />
+    <link
+      rel="stylesheet"
+      media="screen and (max-width: 1024px)"
+      href="./css/styleSheetLaptop.css"
+    />
+    <link
+      rel="stylesheet"
+      media="screen and (max-width: 768px)"
+      href="./css/styleSheetTab.css"
+    />
+    <link
+      rel="stylesheet"
+      media="screen and (max-width: 480px)"
+      href="./css/styleSheetMobile.css"
+    />
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.2.1/chart.umd.js"
+    ></script>
+    <script defer src="./javascript/scripts.js"></script>
+    <script
+      defer
+      src="https://www.bing.com/api/maps/mapcontrol?key=AmzbJ3Pdm8XIuHnBu8bHQKFd5PXXDekVmk74YzWXZKIJNe6lLcxz-Nv5v-Wj8foH&callback=getMap"
+    ></script>
+  </head>
+
+  <body>
+    <nav class="sideNav">
+      <div class="closeIcon"></div>
+      <a href="/">Home</a>
+      <a href="/about.html">About Us</a>
+      <a href="/contact.html">Contact Us</a>
+    </nav>
+    <main>
+      <section class="navbar">
+        <h1 class="companyName">
+          <a href="/">Cos<span class="purpleText">tly</span></a>
+        </h1>
+        <ul class="navbarItems">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+        </ul>
+        <div class="bIcon"></div>
+      </section>
+      <section class="clippyPath">
+        <div class="intro">
+          <h1>Compare the cost of living between cities</h1>
+          <p>
+            Costly is using latest data from across the globe to provide you
+            with statistics that are current and therefore reliable.
+          </p>
+          <form class="entries" autocomplete="off">
+            <div>
+              <input
+                type="text"
+                id="city1"
+                class="entry"
+                placeholder="Enter City"
+                onfocus="focusEvent()"
+              />
+              <ul class="list"></ul>
+            </div>
+            <p>compare with</p>
+            <div>
+              <input
+                type="text"
+                id="city2"
+                class="entry"
+                placeholder="Enter City"
+                onfocus="focusEvent();"
+              />
+              <ul class="list"></ul>
+            </div>
+          </form>
+          <button type="button" id="compareBtn">Compare</button>
+        </div>
+      </section>
+      <div class="hero"></div>
+      <section class="results">
+        <div class="city1">
+          <div id="nameOfCountry_city1" class="nameOfCountry"></div>
+          <div class="flagVScontent">
+            <div id="flagOfCountry_city1"></div>
+            <div class="content">
+              <h2>
+                Capital: &nbsp; <span id="capitalCityOfCountry_city1"></span>
+              </h2>
+              <h2>
+                Latitude: &nbsp; <span id="latitudeOfCountry_city1"></span>
+              </h2>
+              <h2>
+                Longitude: &nbsp; <span id="longitudeOfCountry_city1"></span>
+              </h2>
+              <h2>
+                Population: &nbsp; <span id="populationOfCountry_city1"></span>
+              </h2>
+              <h2>
+                Languages: &nbsp; <span id="languagesOfCountry_city1"></span>
+              </h2>
+              <h2>
+                SubRegion: &nbsp; <span id="subRegionOfCountry_city1"></span>
+              </h2>
+              <h2>
+                Currency: &nbsp; <span id="currencyOfCountry_city1"></span
+                ><span>&nbsp;-&nbsp;</span
+                ><span id="currencySymbolOfCountry_city1"></span>
+              </h2>
+            </div>
+          </div>
+          <div class="map" id="map1"></div>
+        </div>
+
+        <div class="city2">
+          <div id="nameOfCountry_city2" class="nameOfCountry"></div>
+          <div class="flagVScontent">
+            <div id="flagOfCountry_city2"></div>
+            <div class="content">
+              <h2>
+                Capital: &nbsp; <span id="capitalCityOfCountry_city2"></span>
+              </h2>
+              <h2>
+                Latitude: &nbsp; <span id="latitudeOfCountry_city2"></span>
+              </h2>
+              <h2>
+                Longitude: &nbsp; <span id="longitudeOfCountry_city2"></span>
+              </h2>
+              <h2>
+                Population: &nbsp; <span id="populationOfCountry_city2"></span>
+              </h2>
+              <h2>
+                Languages: &nbsp; <span id="languagesOfCountry_city2"></span>
+              </h2>
+              <h2>
+                SubRegion: &nbsp; <span id="subRegionOfCountry_city2"></span>
+              </h2>
+              <h2>
+                Currency: &nbsp; <span id="currencyOfCountry_city2"></span
+                ><span>&nbsp;-&nbsp;</span
+                ><span id="currencySymbolOfCountry_city2"></span>
+              </h2>
+            </div>
+          </div>
+          <div class="map" id="map2"></div>
+        </div>
+        <canvas id="chart" class="gridCol2"></canvas>
+        <div>
+          <div class="checkIn">
+            <input
+              type="checkbox"
+              id="checkAll"
+              checked
+              onclick="updateChecker()"
+            />
+            <p>&emsp;Select All</p>
+          </div>
+          <div class="checkIn">
+            <input type="checkbox" id="check0" checked />
+            <p id="param0"></p>
+          </div>
+          <div class="checkIn">
+            <input type="checkbox" id="check1" checked />
+            <p id="param1"></p>
+          </div>
+          <div class="checkIn">
+            <input type="checkbox" id="check2" checked />
+            <p id="param2"></p>
+          </div>
+          <div class="checkIn">
+            <input type="checkbox" id="check3" checked />
+            <p id="param3"></p>
+          </div>
+          <div class="checkIn">
+            <input type="checkbox" id="check4" checked />
+            <p id="param4"></p>
+          </div>
+          <div class="checkIn">
+            <input type="checkbox" id="check5" checked />
+            <p id="param5"></p>
+          </div>
+          <div class="checkIn">
+            <input type="checkbox" id="check6" checked />
+            <p id="param6"></p>
+          </div>
+          <div class="checkIn">
+            <input type="checkbox" id="check7" checked />
+            <p id="param7"></p>
+          </div>
+          <div class="checkIn">
+            <input type="checkbox" id="check8" checked />
+            <p id="param8"></p>
+          </div>
+          <div class="checkIn">
+            <input type="checkbox" id="check9" checked />
+            <p id="param9"></p>
+          </div>
+        </div>
+        <table class="gridCol2">
+          <tr>
+            <th>Category</th>
+            <th>City 1</th>
+            <th>City 2</th>
+            <th>Comparison</th>
+          </tr>
+          <tr>
+            <td id="category0"></td>
+            <td id="data0City1"></td>
+            <td id="data0City2"></td>
+            <td class="comparison" id="comparison0"></td>
+          </tr>
+          <tr>
+            <td id="category1"></td>
+            <td id="data1City1"></td>
+            <td id="data1City2"></td>
+            <td id="comparison1"></td>
+          </tr>
+          <tr>
+            <td id="category2"></td>
+            <td id="data2City1"></td>
+            <td id="data2City2"></td>
+            <td id="comparison2"></td>
+          </tr>
+          <tr>
+            <td id="category3"></td>
+            <td id="data3City1"></td>
+            <td id="data3City2"></td>
+            <td id="comparison3"></td>
+          </tr>
+          <tr>
+            <td id="category4"></td>
+            <td id="data4City1"></td>
+            <td id="data4City2"></td>
+            <td id="comparison4"></td>
+          </tr>
+          <tr>
+            <td id="category5"></td>
+            <td id="data5City1"></td>
+            <td id="data5City2"></td>
+            <td id="comparison5"></td>
+          </tr>
+          <tr>
+            <td id="category6"></td>
+            <td id="data6City1"></td>
+            <td id="data6City2"></td>
+            <td id="comparison6"></td>
+          </tr>
+          <tr>
+            <td id="category7"></td>
+            <td id="data7City1"></td>
+            <td id="data7City2"></td>
+            <td id="comparison7"></td>
+          </tr>
+          <tr>
+            <td id="category8"></td>
+            <td id="data8City1"></td>
+            <td id="data8City2"></td>
+            <td id="comparison8"></td>
+          </tr>
+          <tr>
+            <td id="category9"></td>
+            <td id="data9City1"></td>
+            <td id="data9City2"></td>
+            <td id="comparison9"></td>
+          </tr>
+        </table>
+      </section>
+      <section id="footer"></section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Costly - Contact Us</title>
+    <link rel="stylesheet" media="screen and (min-width: 1281px)" href="./css/styleSheetHighRes.css">
+    <link rel="stylesheet" media="screen and (max-width: 1280px)" href="./css/styleSheetDesktop.css">
+    <link rel="stylesheet" media="screen and (max-width: 1024px)" href="./css/styleSheetLaptop.css">
+    <link rel="stylesheet" media="screen and (max-width: 768px)" href="./css/styleSheetTab.css">
+    <link rel="stylesheet" media="screen and (max-width: 480px)" href="./css/styleSheetMobile.css">
+</head>
+
+<body>
+    <main class="subtleBackground">
+        <section class="navbar">
+            <h1 class="companyName"><a href="/">Cos<span class="purpleText">tly</span></a></h1>
+            <ul class="navbarItems">
+                <li> <a href="/">Home</a> </li>
+                <li> <a href="/about.html">About Us</a> </li>
+                <li> <a href="/contact.html">Contact Us</a> </li>
+            </ul>
+        </section>
+        <section class="contactDetails">
+            <h1>For any enquiries or feedback, please fill out this form:</h1>
+            <form action="insert.php" class="contactForm">
+                <input type="text" name="personName" id="personName" placeholder="Enter Your Name">
+                <input type="email" name="personEmail" id="personEmail" placeholder="Enter Valid Email">
+                <textarea name="personMessage" id="personMessage" cols="30" rows="3"
+                    placeholder="Enter Your Message"></textarea>
+                <button type="submit">Send</button>
+            </form>
+
+        </section>
+
+        <section id="footer"></section>
+    </main>
+
+    <script>
+        document.getElementById("footer").innerHTML = ` &copy; ${new Date().getFullYear()} Costly`;
+   </script>
+</body>
+
+</html>
